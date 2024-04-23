@@ -5,6 +5,7 @@ class ProductManager {
         this.products = [];
         this.nextId = 1;
         this.path = filePath
+        
     }
 
     addProduct(product) {
@@ -37,14 +38,15 @@ class ProductManager {
 
     isProductValid(product) {
         return (
-            product.title &&
-            product.description &&
-            product.thumbnail &&
-            product.code &&
-            product.price &&
-            product.status &&
-            product.category &&
-            product.stock !== undefined
+            typeof product.title === "string" &&
+            typeof product.description === "string" &&
+            typeof product.code === "string" &&
+            typeof product.price === "number" &&
+            typeof product.status === "boolean" &&
+            typeof product.category === "string" &&
+            typeof product.stock === "number" &&
+            (!product.thumbnail || Array.isArray(product.thumbnail))
+           
         );
     }
 
@@ -53,11 +55,13 @@ class ProductManager {
     }
 
     updateProduct(id, updatedProduct) {
+        
         const index = this.products.findIndex(p => p.id === id);
         if (index !== -1) {
         this.products[index] = { ...this.products[index], ...updatedProduct };
         this.saveProducts();
             console.log("Producto actualizado correctamente.");
+            return this.products[index]
         } else {
             console.log("ERROR: PRODUCTO NO ENCONTRADO");
         }

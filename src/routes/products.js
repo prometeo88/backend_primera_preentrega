@@ -2,8 +2,9 @@ const express = require("express")
 const router = express.Router();
 const fs_= require('fs')
 
-const ProductManager = require('../productManager.js')
+const ProductManager = require('../productManager.js');
 const productManager = new ProductManager('./productos.json');
+productManager.loadProducts();
 
 router.get('/', async (req, res) =>{
     try {
@@ -51,6 +52,38 @@ router.get('/', async (req, res) =>{
     
     
     })
+
+router.post('/', async (req, res) =>{
+    try {
+        const newProduct = req.body;
+        const addedProduct = await productManager.addProduct(newProduct)
+        res.json(addedProduct)
+        
+    } catch (error) {
+        console.log("Error al agregar producto:", error); 
+    }
+
+})    
+
+router.put('/:pid', async (req, res) => {
+    try {
+        const productId = parseInt(req.params.pid);
+        const updatedProduct = req.body;
+        
+        await productManager.loadProducts(); 
+        const modifiedProduct = productManager.updateProduct(productId, updatedProduct);
+        
+        if (modifiedProduct) {
+            res.json(modifiedProduct);
+        } else {
+            res.status(404).send('Producto no encontrado');
+        }
+    } catch (error) {
+        console.log("Error al actualizar producto:", error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
 
 
 
