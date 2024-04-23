@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "primera pre entrega coderhouse - backend",
   "main": "app.js",
-  "type": "module",
-  "scripts": {
+   "scripts": {
     "start": "node --watch ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
