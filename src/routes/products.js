@@ -84,6 +84,18 @@ router.put('/:pid', async (req, res) => {
     }
 });
 
+router.delete('/:pid', async (req , res) =>{
+    try {
+        const deletedProductId = parseInt(req.params.pid)
+        const deletedProduct = productManager.deleteProducts(deletedProductId)
+        res.json(deletedProduct)
+        
+    } catch (error) {
+        console.log("Error al eliminar producto:", error);
+        res.status(500).send('Error interno del servidor');
+    }
+})
+
 
 
 

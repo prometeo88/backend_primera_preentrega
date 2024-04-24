@@ -1,9 +1,9 @@
 [
   {
-    "title": "PRODUCTO ALTERADO",
+    "title": "Nuevo Producto",
     "description": "Descripción del nuevo producto",
     "code": "ABC123",
-    "price": 30,
+    "price": 19.99,
     "status": true,
     "category": "Electrónicos",
     "stock": 10,
@@ -13,5 +13,35 @@
       "url3"
     ],
     "id": 1
+  },
+  {
+    "title": "Nuevo Producto",
+    "description": "Descripción del nuevo producto",
+    "code": "ABC125",
+    "price": 19.99,
+    "status": true,
+    "category": "Electrónicos",
+    "stock": 10,
+    "thumbnail": [
+      "url1",
+      "url2",
+      "url3"
+    ],
+    "id": 3
+  },
+  {
+    "title": "Nuevo Producto",
+    "description": "Descripción del nuevo producto",
+    "code": "ABC127",
+    "price": 19.99,
+    "status": true,
+    "category": "Electrónicos",
+    "stock": 10,
+    "thumbnail": [
+      "url1",
+      "url2",
+      "url3"
+    ],
+    "id": 4
   }
 ]

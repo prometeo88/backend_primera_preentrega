@@ -72,6 +72,7 @@ class ProductManager {
             this.products.splice(index, 1);
             this.saveProducts();
             console.log("Producto eliminado con exito");
+            return this.products[index]
         }else {
             console.log("Error al eliminar el producto ")
         }
