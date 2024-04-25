@@ -1,10 +1,13 @@
 const express = require("express")
 const router = express.Router();
 
-const cart = []
+const CartManager = require('../cartManager.js')
+const cartManager = new CartManager ('./carrito.json')
 
-router.get('/carts', (req, res) =>{
-    res.json(cart)
+router.post('/carts', (req, res) =>{
+    cartManager.createCart()
+    
+    res.json(carts)
 })
 
 
