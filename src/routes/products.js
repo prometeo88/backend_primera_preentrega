@@ -40,7 +40,7 @@ router.get('/', async (req, res) =>{
     if(product){
         res.json(product)}
     else{
-        const respuestaE = `<p style="color:red">PRODUCTO NO ENCONTRADO</p>`;
+        const respuestaE = `<p style="color:red">PRODUCTO NO ENCONTRADO-</p>`;
         res.status(400).send(respuestaE)
     
         }

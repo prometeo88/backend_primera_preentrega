@@ -1,3 +1,4 @@
+const { json } = require("express");
 const fs = require("fs");
 
 class CartManager {
@@ -25,7 +26,29 @@ class CartManager {
       cart.products = [];
 
       this.carts.push(cart)
+      this.saveCart()
 
+    }
+    saveCart(){
+      try {
+        const data = JSON.stringify(this.carts,null,2);
+        fs.writeFileSync(this.path,data);
+        console.log("Carrito Guardado con exito")
+        
+      } catch (error) {
+        console.log("ERROR: NO SE PUDO GUARDAR EL CARRITO")
+        
+      }
+    }
+    loadCart(){
+      try {
+        const data = fs.readFileSync(this.path,'utf8')
+        this.cart = JSON.parse(data)
+                
+      } catch (error) {
+        console.log("ERROR: NO SE PUDO CARGAR EL CARRITO")
+        
+      }
     }
     
   }
