@@ -43,7 +43,7 @@ class CartManager {
     loadCart(){
       try {
         const data = fs.readFileSync(this.path,'utf8')
-        this.cart = JSON.parse(data)
+        this.carts = JSON.parse(data)
                 
       } catch (error) {
         console.log("ERROR: NO SE PUDO CARGAR EL CARRITO")
