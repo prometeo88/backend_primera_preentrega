@@ -5,9 +5,10 @@ const CartManager = require('../cartManager.js')
 const cartManager = new CartManager ('./carrito.json')
 
 router.post('/carts', (req, res) =>{
-    cartManager.createCart()
+    const cartData = req.body
+    cartManager.createCart(cartData)
     
-    res.json(carts)
+    res.json(cartManager.carts)
 })
 
 

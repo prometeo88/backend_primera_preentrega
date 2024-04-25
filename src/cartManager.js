@@ -8,7 +8,7 @@ class CartManager {
   }
 
   generarIdUnica(){
-    return Date.now().toString(36) + Math.random().toString(36).from(2, 5)
+    return Date.now().toString(36) + Math.random().toString(36).substring(2,5)
   }
 
   isIdCartDuplicate(id){
@@ -22,6 +22,7 @@ class CartManager {
       }
 
       cart.id = this.generarIdUnica();
+      cart.products = [];
 
       this.carts.push(cart)
 
