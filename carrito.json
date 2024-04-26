@@ -1,6 +1,15 @@
 [
   {
-    "id": "lvfwfqjwz8q",
-    "products": []
+    "id": "lvgv9wissmi",
+    "products": [
+      {
+        "id": 1,
+        "quantity": 3
+      },
+      {
+        "id": 3,
+        "quantity": 2
+      }
+    ]
   }
 ]

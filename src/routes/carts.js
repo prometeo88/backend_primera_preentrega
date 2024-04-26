@@ -15,27 +15,34 @@ router.post("/carts", (req, res) => {
 
 router.post("/carts/:cid/product/:pid", (req, res) => {
   try {
-    const productId = req.params.pid;
-    const cartId =  req.params.cid;
+    const productId = parseInt(req.params.pid);
+    const cartId = req.params.cid;
     productManager.loadProducts();
-    const product = productManager.products.find( product => product.id === productId);
-    
+
+    const product = productManager.products.find(product => product.id === productId);
+
     if (!product) {
-      return res
-        .status(400).json({message: "Imposible agregar al carrito, PRODUCTO no encontrado",
-        });
+      return res.status(400).json({ message: "Imposible agregar al carrito, PRODUCTO no encontrado" });
     }
 
-    const cart = cartManager.carts.find(cart => cart.id === cartId)
+    const cart = cartManager.carts.find(cart => cart.id === cartId);
 
     if (!cart) {
-        return res
-          .status(400).json({message: "Imposible agregar al carrito, CARRITO no encontrado",
-          });
-      }
+      return res.status(400).json({ message: "Imposible agregar al carrito, CARRITO no encontrado" });
+    }
 
-    cart.products.push(productId);
+    const existingProductIndex = cart.products.findIndex(p => p.id === productId);
 
+    if (existingProductIndex === -1) {
+      
+      cart.products.push({ id: productId, quantity: 1 });
+    } else {
+     
+      cart.products[existingProductIndex].quantity++;
+    }
+
+    cartManager.saveCart();
+    
     res.json(cart);
 
   } catch (error) {
@@ -45,7 +52,7 @@ router.post("/carts/:cid/product/:pid", (req, res) => {
 
 router.get("/carts/:cid", (req, res) => {
   try {
-    const cartId = req.query.cid;
+    const cartId = req.params.cid;
     const cart = cartManager.carts.find((cart) => cart.id === cartId);
 
     if (!cart) {
