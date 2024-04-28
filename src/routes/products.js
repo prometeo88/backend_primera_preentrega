@@ -4,7 +4,7 @@ const fs_= require('fs')
 
 const ProductManager = require('../productManager.js');
 const productManager = new ProductManager('./productos.json');
-productManager.loadProducts();
+
 
 router.get('/', async (req, res) =>{
     try {
@@ -15,15 +15,15 @@ router.get('/', async (req, res) =>{
             const limit = parseInt(req.query.limit);
             console.log('Limite solicitado;',limit)
             if(!isNaN(limit) && limit > 0){
-                products = product.slice(0,limit)
-                console.log(products)
+                productsLimit = product.slice(0,limit)
+                
             } else {
                 console.log("Error al aplicar el limite")
                 return res.status(400).send("Error al aplicar el limite")
             }
         }
     
-        res.json(productManager.products)
+        res.json(productsLimit)
         
     } catch (error) {
         console.log("Error al cargar archivos")
