@@ -1,8 +1,8 @@
 [
   {
-    "title": "Nuevo Producto FF",
+    "title": "Nuevo Producto FF11",
     "description": "Descripción del nuevo producto F",
-    "code": "ABC130",
+    "code": "A2",
     "price": 19.99,
     "status": true,
     "category": "Electrónicos",
@@ -12,6 +12,6 @@
       "url2",
       "url3"
     ],
-    "id": 1
+    "id": 2
   }
 ]

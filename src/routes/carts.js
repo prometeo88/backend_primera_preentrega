@@ -6,14 +6,14 @@ const ProductManager = require("../productManager.js");
 const productManager = new ProductManager("./productos.json");
 const cartManager = new CartManager("./carrito.json");
 
-router.post("/carts", (req, res) => {
+router.post("/", (req, res) => {
   const cartData = req.body;
   cartManager.createCart(cartData);
 
   res.json(cartManager.carts);
 });
 
-router.post("/carts/:cid/product/:pid", (req, res) => {
+router.post("/:cid/product/:pid", (req, res) => {
   try {
     const productId = parseInt(req.params.pid);
     const cartId = req.params.cid;
@@ -50,7 +50,7 @@ router.post("/carts/:cid/product/:pid", (req, res) => {
   }
 });
 
-router.get("/carts/:cid", (req, res) => {
+router.get("/:cid", (req, res) => {
   try {
     const cartId = req.params.cid;
     const cart = cartManager.carts.find((cart) => cart.id === cartId);

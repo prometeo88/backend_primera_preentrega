@@ -1,15 +1,15 @@
 [
   {
-    "id": "lvgv9wissmi",
+    "id": "lvmxz61bee3",
     "products": [
       {
-        "id": 1,
-        "quantity": 3
-      },
-      {
-        "id": 3,
+        "id": 2,
         "quantity": 2
       }
     ]
+  },
+  {
+    "id": "lvmy5kczzwc",
+    "products": []
   }
 ]
