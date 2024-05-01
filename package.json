@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "primera pre entrega coderhouse - backend",
   "main": "app.js",
-   "scripts": {
+  "scripts": {
     "start": "node --watch ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "fs": "^0.0.1-security"
+    "express-handlebars": "^7.1.2",
+    "fs": "^0.0.1-security",
+    "socket.io": "^4.7.5"
   }
 }
