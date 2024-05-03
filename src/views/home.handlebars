@@ -6,7 +6,11 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Productos</h1>
-    <p>Este es un mensaje de prueba.</p>
+    <h1>Productos Disponibles</h1>
+<ul>
+        {{#each loadProducts}}
+            <li>{{this.title}}</li>
+        {{/each}}
+    </ul>
 </body>
 </html>

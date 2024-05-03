@@ -2,6 +2,21 @@
   {
     "title": "Nuevo Producto FF11",
     "description": "Descripción del nuevo producto F",
+    "code": "A1",
+    "price": 19.99,
+    "status": true,
+    "category": "Electrónicos",
+    "stock": 10,
+    "thumbnail": [
+      "url1",
+      "url2",
+      "url3"
+    ],
+    "id": 1
+  },
+  {
+    "title": "Nuevo Producto FF11",
+    "description": "Descripción del nuevo producto F",
     "code": "A2",
     "price": 19.99,
     "status": true,
@@ -13,5 +28,20 @@
       "url3"
     ],
     "id": 2
+  },
+  {
+    "title": "Nuevo Producto FF11",
+    "description": "Descripción del nuevo producto F",
+    "code": "A3",
+    "price": 19.99,
+    "status": true,
+    "category": "Electrónicos",
+    "stock": 10,
+    "thumbnail": [
+      "url1",
+      "url2",
+      "url3"
+    ],
+    "id": 3
   }
 ]

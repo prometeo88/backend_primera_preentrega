@@ -93,6 +93,8 @@ class ProductManager {
         try {
             const data = fs.readFileSync(this.path,'utf8')
             this.products = JSON.parse(data)
+            console.log("ARCHIVO PRODUCTOS CARGADO CORRECTAMENTE")
+            return this.products
         } catch (err) {
             console.log("ERROR: NO SE PUDO LEER LOS PRODUCTOS")
         }
