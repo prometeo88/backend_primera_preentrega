@@ -1,11 +1,23 @@
-<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Time Products</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Productos Actualizados en tiempo real</h1>
-</body>
+
+    <form action=""></form>
+
+    <ul>
+      {{#each loadRTProducts}}
+        <li>Nombre: {{this.title}} ID: {{this.id}}</li>
+      {{/each}}
+    </ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+
+  </body>
+
 </html>

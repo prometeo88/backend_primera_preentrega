@@ -7,10 +7,8 @@ const socketIo = require('socket.io')
 
 const server = http.createServer(app)
 const io = socketIo(server)
-
 io.on("connection", (socket) =>{
-    console.log("Nuevo cliente conectado con exito")
-})
+    console.log("Nuevo cliente conectado con exito")})
 app.set('io', io);
 
 app.engine('handlebars', expressHandlebars.engine());

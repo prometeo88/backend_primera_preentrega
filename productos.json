@@ -1,9 +1,9 @@
 [
   {
-    "title": "Nuevo Producto FF11",
+    "title": "PRODUCTO ALTERADO2",
     "description": "Descripción del nuevo producto F",
     "code": "A1",
-    "price": 19.99,
+    "price": 30,
     "status": true,
     "category": "Electrónicos",
     "stock": 10,
