@@ -7,7 +7,14 @@
   <body>
     <h1>Productos Actualizados en tiempo real</h1>
 
-    <form action=""></form>
+    <div>
+      <input
+        type="text"
+        id="idDelete"
+        placeholder="Ingrese el Id del producto a eliminar" style="width: 250px"
+      />
+      <button id="btn-send-delete" onclick="deleteId()" >Eliminar Producto</button>
+    </div>
 
     <ul>
       {{#each loadRTProducts}}
