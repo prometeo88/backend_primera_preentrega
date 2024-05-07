@@ -73,7 +73,7 @@ module.exports = function(io) {
           const deletedProduct = productManager.deleteProducts(deletedProductId);
 
           
-          // Emitir evento 'productDeleted'
+         
           io.emit('productDeleted', deletedProductId);
           
           res.json(deletedProduct);

@@ -5,7 +5,7 @@ class ProductManager {
         this.products = [];
         this.nextId = 1;
         this.path = filePath
-        
+        this.loadProducts();
     }
 
     addProduct(product) {
