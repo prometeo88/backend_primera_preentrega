@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-const productsRouter = require("./routes/products.js");
+const productsRouter = require("./routes/products.js")(io);
 const cartsRouter = require("./routes/carts.js");
 const viewsRouter = require("./routes/views.js");
 

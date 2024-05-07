@@ -7,14 +7,63 @@
   <body>
     <h1>Productos Actualizados en tiempo real</h1>
 
-    <div>
+    <h2>Formulario Eliminar Producto por ID</h2>
+    <form id="deleteForm">
       <input
         type="text"
         id="idDelete"
-        placeholder="Ingrese el Id del producto a eliminar" style="width: 250px"
+        placeholder="Ingrese el Id del producto a eliminar"
+        style="width: 250px"
       />
-      <button id="btn-send-delete" onclick="deleteId()" >Eliminar Producto</button>
-    </div>
+      <button type="submit">Eliminar Producto</button>
+    </form>
+
+    <h2>Formulario AGREGAR Producto</h2>
+<form id="addForm">
+  <input
+    type="text"
+    id="title"
+    placeholder="Ingrese el titulo del Producto "
+    style="width: 250px"
+  />
+  <input
+    type="text"
+    id="description"
+    placeholder="Ingrese la descripcion del producto "
+    style="width: 250px"
+  />
+  <input
+    type="text"
+    id="code"
+    placeholder="Ingrese el Codigo del producto "
+    style="width: 250px"
+  />
+  <input
+    type="number"
+    id="price"
+    placeholder="Ingrese el Precio del Producto "
+    style="width: 250px"
+  />
+  <input
+    type="hidden"
+    id="status"
+    value="true"
+  />
+  <input
+    type="text"
+    id="category"
+    placeholder="Ingrese la Categoria del Producto"
+    style="width: 250px"
+  />
+  <input
+    type="number"
+    id="stock"
+    placeholder="Ingrese el Stock"
+    style="width: 250px"
+  />
+
+  <button type="submit">Agregar Producto</button>
+</form>
 
     <ul>
       {{#each loadRTProducts}}

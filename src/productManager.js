@@ -74,6 +74,7 @@ class ProductManager {
             console.log("Producto eliminado con exito");
             return this.products[index]
         }else {
+            console.log(this.products)
             console.log("Error al eliminar el producto ")
         }
 
